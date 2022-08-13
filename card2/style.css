@@ -1,0 +1,27 @@
+header {
+    grid-area: header;
+    background-color: blue;
+}
+main {
+    background-color: green;
+    grid-area: main;
+}
+footer {
+    background-color: orange;
+    grid-area: footer;
+}
+.hi {
+    background-color: aqua;
+    grid-area: b;
+}
+.card {
+    border: 6px solid black;
+    display: grid;
+    grid-template-columns: 6px 300px 6px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "b header"
+        "b main"
+        "b footer"
+    ;
+}
