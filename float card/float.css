@@ -1,0 +1,36 @@
+html, body {
+    height: 100%;
+}
+body {
+    background-color: hsl(163deg 84% 31%);
+    font-family: 'Source Sans Pro';
+    display: grid;
+    place-content: center;
+}
+.card {
+    background-color: white;
+    max-width: 800px;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+/* This is called a clear fix */
+.card::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.floated {
+    float: left;
+    width: 60%;
+    shape-outside: url(../images/lady.png);
+    shape-margin: 15px;
+    margin-right: 12px;
+}
+h2 {
+    font-size: 1.7em;
+}
+p {
+    text-align: justify;
+    line-height: 1.7;
+}

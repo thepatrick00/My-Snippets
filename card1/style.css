@@ -26,15 +26,10 @@ input, button, textarea, select {
   font: inherit;
 }
 /* past global styles */
-h2 {
-    font-family: "Alegreya";
-}
-p, button {
-    font-family: "Source Sans Pro";
-}
 body {
     display: grid;
     place-content: center;
+    font-family: "Source Sans Pro";
 }
 .card {
     max-width: 300px; /* temp */
@@ -71,7 +66,6 @@ main p {
     -webkit-line-clamp: 4;
     overflow: hidden;
     margin-bottom: 1em;
-    text-align:;
 }
 .read-more {
     text-align: right;

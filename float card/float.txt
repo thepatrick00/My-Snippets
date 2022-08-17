@@ -1,0 +1,11 @@
+Some strech goals
+
+- Indented H2 with the special type of M like in a Shrek book
+
+- Shadows for the .card
+
+- using ems on the inside for everything and playing around with the font-size on the card
+
+- adding some special details with absolute positioning. (shapes on the sides)
+
+- a link at the end to see more

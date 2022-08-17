@@ -1,6 +1,3 @@
-Solution - specific side borders are applied
-to everything but the image.
-
 Button should be a variant of the borders color. A dynamic solution
 could be using the filter property.
 
