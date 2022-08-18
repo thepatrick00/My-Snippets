@@ -9,3 +9,5 @@ Some strech goals
 - adding some special details with absolute positioning. (shapes on the sides)
 
 - a link at the end to see more
+
+P.S. write a script that when called automatically creates a folder with .html and .css file and .txt file

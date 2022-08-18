@@ -1,17 +1,45 @@
+/* from Josh Comeau's shadow pallete tool */
+:root {
+    --shadow-color: 0deg 0% 0%;
+    --shadow-elevation-low:
+      0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.25),
+      0.4px 0.8px 0.7px -2.2px hsl(var(--shadow-color) / 0.18),
+      1.2px 2.4px 2.2px -4.5px hsl(var(--shadow-color) / 0.1);
+    --shadow-elevation-medium:
+      0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.21),
+      0.4px 0.8px 0.7px -1.1px hsl(var(--shadow-color) / 0.18),
+      1.1px 2.1px 2px -2.2px hsl(var(--shadow-color) / 0.14),
+      2.7px 5.4px 5px -3.4px hsl(var(--shadow-color) / 0.1),
+      5.9px 11.8px 10.9px -4.5px hsl(var(--shadow-color) / 0.06);
+    --shadow-elevation-high:
+      0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.2),
+      0.5px 1.1px 1px -0.5px hsl(var(--shadow-color) / 0.18),
+      1.1px 2.1px 2px -1px hsl(var(--shadow-color) / 0.16),
+      2.1px 4.1px 3.8px -1.5px hsl(var(--shadow-color) / 0.15),
+      3.8px 7.7px 7.1px -2px hsl(var(--shadow-color) / 0.13),
+      6.7px 13.3px 12.3px -2.5px hsl(var(--shadow-color) / 0.11),
+      10.8px 21.6px 19.9px -3px hsl(var(--shadow-color) / 0.09),
+      16.6px 33.1px 30.5px -3.5px hsl(var(--shadow-color) / 0.07),
+      24.2px 48.4px 44.6px -4px hsl(var(--shadow-color) / 0.06),
+      34px 68px 62.7px -4.5px hsl(var(--shadow-color) / 0.04);
+  }
 html, body {
     height: 100%;
 }
 body {
-    background-color: hsl(163deg 84% 31%);
+    background-color: hsl(0 0% 100%);
     font-family: 'Source Sans Pro';
     display: grid;
     place-content: center;
 }
 .card {
-    background-color: white;
+    background-color: hsl(0 0% 97%);
     max-width: 800px;
     padding: 1.5em;
     border-radius: 1em;
+    filter: drop-shadow(4.1px 4.1px 3.8px hsl(var(--shadow-color) / 0.35));
+    /* box-shadow: var(--shadow-elevation-high); */
+    position: relative;
 }
 /* This is called a clear fix */
 .card::after {
@@ -28,9 +56,21 @@ body {
     margin-right: 12px;
 }
 h2 {
-    font-size: 1.7em;
+    font-size: 2em;
 }
 p {
     text-align: justify;
-    line-height: 1.7;
+    line-height: 1.8;
+}
+.star {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    transform: translate(40%, -25%) rotate(15deg);
+}
+
+::selection {
+    color: hsl(25deg 100% 20%);
+    background-color: hsl(55deg 100% 60%);
 }
