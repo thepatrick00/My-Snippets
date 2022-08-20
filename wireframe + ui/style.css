@@ -1,0 +1,71 @@
+:root {
+    --accent: hsl(120, 62%, 43%);
+ 
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    line-height: 1.5;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+
+body {
+    font-family: 'Nunito';
+    width: 85%;
+    margin: 0 auto;
+}
+header {
+    padding: 1em 0 3em;
+}
+.logo {
+    font-size: 1.4rem;
+    color: var(--accent);
+    padding-bottom: .5em;
+}
+ul {
+    padding: 0;
+}
+ul li {
+    list-style: none;
+    display: inline-block;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+ul.menu a {
+    font-size: .9rem;
+}
+ul.menu li {
+    background-color: hsl(0 0% 90%);
+    padding: 0.5em 1em;
+    border-radius: 999px;
+}
+
+.hero h1 {
+    padding-bottom: .5em;
+}
+.hero p {
+    padding-bottom: 1.5em;
+}
+.hero button {
+    padding: .5em 1em;
+    margin: .75em;
+    margin-left: 0;
+    border-radius: 999px;
+    border: none;
+}

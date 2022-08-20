@@ -109,17 +109,16 @@ p {
     width: 100px;
     aspect-ratio: 1/1;
     border-bottom-right-radius: 16px;
+    transition: transform 1s;
+}
+.read-more-triangle:hover {
+    transform: scale(110%) translate(-5px, -5px);
 }
 /* make the whole triangle a link no just the text */
-.read-more-triangle a {
+.read-more-triangle p {
+    margin: 0;
     text-decoration: none;
     color: black;
     display: block;
-    transform: translate(20px, 50px) rotate(-45deg);
-}
-
-span {
-    float: right;
-    background-color: red;
-    margin-left:
+    transform: translate(25px, 42px) rotate(-45deg);
 }
