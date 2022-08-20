@@ -1,5 +1,7 @@
 /* from Josh Comeau's shadow pallete tool */
 :root {
+    --border-color: hsl(34deg 0% 20%);
+
     --shadow-color: 0deg 0% 0%;
     --shadow-elevation-low:
       0.3px 0.5px 0.5px hsl(var(--shadow-color) / 0.25),
@@ -27,18 +29,17 @@ html, body {
     height: 100%;
 }
 body {
-    background-color: hsl(0 0% 100%);
+    background-color: hsl(0 0% 97%);
     font-family: 'Source Sans Pro';
     display: grid;
     place-content: center;
 }
 .card {
-    background-color: hsl(0 0% 97%);
+    background-color: hsl(0 0% 100%);
     max-width: 800px;
     padding: 1.5em;
     border-radius: 1em;
     filter: drop-shadow(4.1px 4.1px 3.8px hsl(var(--shadow-color) / 0.35));
-    /* box-shadow: var(--shadow-elevation-high); */
     position: relative;
 }
 /* This is called a clear fix */
@@ -57,6 +58,17 @@ body {
 }
 h2 {
     font-size: 2em;
+    position: relative;
+}
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 4px;
+    background-color: var(--border-color);
 }
 p {
     text-align: justify;
@@ -73,4 +85,41 @@ p {
 ::selection {
     color: hsl(25deg 100% 20%);
     background-color: hsl(55deg 100% 60%);
+}
+
+.read-more {
+    font-size: 1.2rem;
+    padding: .3em 1em;
+    border: 3px solid var(--border-color);
+    border-radius: 16px;
+    position: absolute;
+    right: -34px;
+    bottom: 14px;
+    rotate: -8deg;
+    background-color: hsl(171, 88%, 57%);
+    color: black;
+    text-decoration: none;
+}
+.read-more-triangle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(55deg 100% 60%);
+    clip-path: polygon(100% 10%, 100% 100%, 10% 100%);
+    width: 100px;
+    aspect-ratio: 1/1;
+    border-bottom-right-radius: 16px;
+}
+/* make the whole triangle a link no just the text */
+.read-more-triangle a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    transform: translate(20px, 50px) rotate(-45deg);
+}
+
+span {
+    float: right;
+    background-color: red;
+    margin-left:
 }
