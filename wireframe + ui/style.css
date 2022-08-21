@@ -1,5 +1,13 @@
 :root {
-    --accent: hsl(120, 62%, 43%);
+    --accent-light: hsl(80, 62%, 63%);
+    --accent-mid: hsl(80, 62%, 53%);
+    --accent-dark: hsl(80, 62%, 43%);
+
+    --light-gray: hsl(0 0% 95%);
+
+    --section-padding-left-right: 7%;
+    --section-padding-top-bottom: 3em;
+    --section-padding: var(--section-padding-top-bottom) var(--section-padding-left-right);
  
 }
 
@@ -22,18 +30,20 @@ img, picture, video, canvas, svg {
 input, button, textarea, select {
     font: inherit;
 }
-
+button {
+    border: none;
+    border-radius: 9999px;
+}
 body {
     font-family: 'Nunito';
-    width: 85%;
     margin: 0 auto;
 }
 header {
-    padding: 1em 0 3em;
+    padding: 1em var(--section-padding-left-right);
 }
 .logo {
     font-size: 1.4rem;
-    color: var(--accent);
+    color: var(--accent-dark);
     padding-bottom: .5em;
 }
 ul {
@@ -54,8 +64,14 @@ ul.menu li {
     background-color: hsl(0 0% 90%);
     padding: 0.5em 1em;
     border-radius: 999px;
+    margin-right: .5em;
 }
-
+ul.menu li:last-of-type {
+    margin-right: 0;
+}
+.hero {
+    padding: var(--section-padding);
+}
 .hero h1 {
     padding-bottom: .5em;
 }
@@ -68,4 +84,28 @@ ul.menu li {
     margin-left: 0;
     border-radius: 999px;
     border: none;
+    background-color: var(--accent-dark);
+    color: white;
+    font-weight: bold;
+}
+
+.mmo {
+    background-color: hsl(0, 0%, 50%);
+    padding: var(--section-padding);
+}
+.mmo__button {
+    display: inline-block;
+    border-radius: 999px;
+    background-color: antiquewhite;
+    padding: .75em 2em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 1em 0;
+    background-color: var(--accent-light);
+}
+.mmo__button--emoji {
+    font-size: 2em;
 }
