@@ -1,1 +1,1 @@
-1. light green bg section and white
+1. header border bottom with shadow

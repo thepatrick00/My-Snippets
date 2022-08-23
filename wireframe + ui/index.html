@@ -12,12 +12,15 @@
 </head>
 <body>
     <header>
-        <h2 class="logo">MoneyDecent</h2>
-        <nav>
+        <a href="#" class="logo">MoneyDecent</a>
+        <img src="./images/menu.svg" alt="menu button" class="open" id="menu-button">
+        <nav id="nav">
+            <img src="./images/x.svg" alt="exit menu" class="exit" id="exit-button">
             <ul class="menu">
-                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="">How to</a></li>
+                <li><a href="">Categories</a></li>
+                <li><a href="">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -30,17 +33,18 @@
             <!-- <button>Mindset Tools For Success Online</button> -->
         </div>
         <section class="mmo">
-            <span class="mmo__button">
+            <div class="mmo__button">
                 <span class="mmo__button--emoji">💻</span><a href="">Make a website</a>
-            </span>
+            </div>
         
-            <span class="mmo__button">
+            <div class="mmo__button">
                 <span class="mmo__button--emoji">📃</span> <a href="">Take online surveys</a>
-            </span>
+            </div>
         
-            <span class="mmo__button">
+            <div class="mmo__button">
                 <span class="mmo__button--emoji">🎤</span><a href="">Start a podcast</a>
-            </span>
+            </div>
         </section>
+        <script src="index.js"></script>
 </body>
 </html>

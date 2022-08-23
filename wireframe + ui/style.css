@@ -1,4 +1,29 @@
 :root {
+    /* --shadow-color: 80deg 50% 42%; */
+    --shadow-color: 0deg 0% 50%;
+    --shadow-elevation-low:
+      0.4px 0.4px 0.6px hsl(var(--shadow-color) / 0.38),
+      0.5px 0.5px 0.7px -1.7px hsl(var(--shadow-color) / 0.31),
+      1.3px 1.3px 1.8px -3.5px hsl(var(--shadow-color) / 0.24);
+    --shadow-elevation-medium:
+      0.4px 0.4px 0.6px hsl(var(--shadow-color) / 0.32),
+      0.7px 0.7px 1px -0.9px hsl(var(--shadow-color) / 0.28),
+      1.5px 1.5px 2.1px -1.7px hsl(var(--shadow-color) / 0.25),
+      3.3px 3.2px 4.5px -2.6px hsl(var(--shadow-color) / 0.21),
+      6.6px 6.6px 9.1px -3.5px hsl(var(--shadow-color) / 0.17);
+    --shadow-elevation-high:
+      0.4px 0.4px 0.6px hsl(var(--shadow-color) / 0.3),
+      1px 1px 1.4px -0.4px hsl(var(--shadow-color) / 0.28),
+      1.8px 1.8px 2.5px -0.8px hsl(var(--shadow-color) / 0.26),
+      2.9px 2.9px 4px -1.2px hsl(var(--shadow-color) / 0.25),
+      4.5px 4.5px 6.2px -1.6px hsl(var(--shadow-color) / 0.23),
+      6.9px 6.9px 9.5px -1.9px hsl(var(--shadow-color) / 0.21),
+      10.4px 10.4px 14.3px -2.3px hsl(var(--shadow-color) / 0.2),
+      15.1px 15.1px 20.8px -2.7px hsl(var(--shadow-color) / 0.18),
+      21.3px 21.3px 29.4px -3.1px hsl(var(--shadow-color) / 0.16),
+      29.3px 29.2px 40.3px -3.5px hsl(var(--shadow-color) / 0.14);
+}
+:root {
     --accent-light: hsl(80, 62%, 63%);
     --accent-mid: hsl(80, 62%, 53%);
     --accent-dark: hsl(80, 62%, 43%);
@@ -30,45 +55,137 @@ img, picture, video, canvas, svg {
 input, button, textarea, select {
     font: inherit;
 }
-button {
-    border: none;
-    border-radius: 9999px;
-}
 body {
     font-family: 'Nunito';
     margin: 0 auto;
 }
+button {
+    border: none;
+    border-radius: 9999px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+/* Header Section */
 header {
     padding: 1em var(--section-padding-left-right);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0px solid hsl(0, 0%, 80%);
+    box-shadow: var(--shadow-elevation-medium);
 }
 .logo {
     font-size: 1.4rem;
+    font-weight: bold;
+    display: inline-block;
     color: var(--accent-dark);
-    padding-bottom: .5em;
+    margin-right: 10px;
+}
+nav {
+    display: none;
+    width: 60%;
+    height: 100%;
+    background-color: hsl(0, 0%, 90%);
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+.open-nav {
+    /* for js */
+    display: unset;
+}
+.open {
+    width: 27px;
+}
+.exit {
+    float: right;
+    margin: 16px 36px 0 0;
+    width: 27px;
 }
 ul {
     padding: 0;
 }
 ul li {
     list-style: none;
-    display: inline-block;
 }
-a {
-    text-decoration: none;
-    color: black;
-}
-ul.menu a {
-    font-size: .9rem;
+ul.menu {
+    padding: 3.5em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 300;
+    color: white;
+    margin: 0;
 }
 ul.menu li {
-    background-color: hsl(0 0% 90%);
     padding: 0.5em 1em;
-    border-radius: 999px;
-    margin-right: .5em;
 }
-ul.menu li:last-of-type {
-    margin-right: 0;
+ul.menu li:hover {
+    background-color: hsl(0, 0%, 90%);
 }
+ul.menu a {
+    color: hsl(0, 0%, 13%);
+}
+ul.menu .active {
+    font-weight: bold;
+    position: relative;
+}
+.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-dark);
+}
+@media (min-width: 550px) {
+    nav {
+        display: none;
+        width: 60%;
+        height: 100%;
+        background-color: hsl(0, 0%, 90%);
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+    .exit {
+        float: right;
+        padding: .35em 1em 0 0;
+    }
+    nav {
+        display: unset;
+        width: unset;
+        background-color: unset;
+        position: unset;
+
+    }
+    .open, .exit {
+        display: none;
+    }
+    ul.menu {
+        display: flex;
+    }
+    ul.menu li {
+        background-color: hsl(0 0% 90%);
+        padding: 0.5em 1em;
+        border-radius: 999px;
+        margin-right: .5em;
+    }
+    ul.menu li:last-of-type {
+        margin-right: 0;
+    }
+    
+}
+/* Hero Section */
 .hero {
     padding: var(--section-padding);
 }
@@ -88,24 +205,26 @@ ul.menu li:last-of-type {
     color: white;
     font-weight: bold;
 }
-
+/* MMO Section */
 .mmo {
-    background-color: hsl(0, 0%, 50%);
+    background-color: hsl(80, 62%, 80%);
     padding: var(--section-padding);
+    display: flex;
+    flex-direction: column;
 }
 .mmo__button {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     border-radius: 999px;
-    background-color: antiquewhite;
-    padding: .75em 2em;
+    padding: 18px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.125em;
     margin: 1em 0;
-    background-color: var(--accent-light);
+    background-color: white;
 }
 .mmo__button--emoji {
-    font-size: 2em;
+    font-size: 20px;
 }
