@@ -24,7 +24,7 @@
       29.3px 29.2px 40.3px -3.5px hsl(var(--shadow-color) / 0.14);
 }
 :root {
-    --accent-light: hsl(80, 62%, 63%);
+    --accent-light: hsl(80, 62%, 90%);
     --accent-mid: hsl(80, 62%, 53%);
     --accent-dark: hsl(80, 62%, 43%);
 
@@ -33,7 +33,12 @@
     --section-padding-left-right: 7%;
     --section-padding-top-bottom: 3em;
     --section-padding: var(--section-padding-top-bottom) var(--section-padding-left-right);
- 
+    
+    --dark-blue: #274465;
+    --bright-green: #88b22b;
+    --dull-green: #a9b385;
+    --light-green: #e8f2d6;
+    --brown: #8c2f0d;
 }
 
 *, *::before, *::after {
@@ -80,58 +85,76 @@ header {
     font-size: 1.4rem;
     font-weight: bold;
     display: inline-block;
-    color: var(--accent-dark);
+    color: var(--bright-green);
     margin-right: 10px;
 }
 nav {
-    display: none;
+    visibility: hidden;
     width: 60%;
-    height: 100%;
-    background-color: hsl(0, 0%, 90%);
+    height: 100vh;
+    background-color: hsl(0, 0%, 100%);
+    background-color: var(--dull-green);
+    filter: drop-shadow(0px 0px 4px hsl(0 0% 70%));
     position: fixed;
     top: 0;
     right: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all .3s;
 }
 .open-nav {
     /* for js */
-    display: unset;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0%);
+    transition: all 1s;
 }
 .open {
     width: 27px;
 }
 .exit {
     float: right;
-    margin: 16px 36px 0 0;
-    width: 27px;
+    margin: 20px 28px 0 0;
+    width: 28px;
 }
 ul {
     padding: 0;
+    margin: 0;
 }
 ul li {
     list-style: none;
 }
-ul.menu {
-    padding: 3.5em 0;
+.menu {
+    padding: 2em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    clear: right;
+}
+.menu li {
+    padding: 0.5em 1em;
+    /* background-color: hsl(0, 0%, 75%); */
+    background-color: var(--light-green);
+    width: 100%;
+    margin: 2px 0;
+}
+.menu li:hover {
+    background-color: var(--dark-blue);
+}
+.menu li:hover a {
+    color: white;
+}
+.menu a {
+    color: hsl(0, 0%, 13%);
     font-size: 2rem;
     font-weight: 300;
-    color: white;
-    margin: 0;
 }
-ul.menu li {
-    padding: 0.5em 1em;
-}
-ul.menu li:hover {
-    background-color: hsl(0, 0%, 90%);
-}
-ul.menu a {
-    color: hsl(0, 0%, 13%);
-}
-ul.menu .active {
-    font-weight: bold;
+.menu .active {
     position: relative;
+}
+.menu .active a {
+    font-weight: bold;
 }
 .active::after {
     content: '';
@@ -139,51 +162,64 @@ ul.menu .active {
     bottom: 0px;
     left: 0px;
     width: 100%;
-    height: 4px;
-    background-color: var(--accent-dark);
+    height: 8px;
+    background-color: var(--dark-blue);
+}
+.submenu {
+    text-align: left;
+}
+.submenu li {
+    border-left: 2px solid white;
+    background-color: unset;
+}
+.submenu li a{
+    font-size: 1rem;
+    color: black;
+    font-size: 1.1rem;
+}
+.submenu p {
+    display: none;
 }
 @media (min-width: 550px) {
     nav {
-        display: none;
-        width: 60%;
-        height: 100%;
-        background-color: hsl(0, 0%, 90%);
-        position: fixed;
-        top: 0;
-        right: 0;
-    }
-    nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-    }
-    .exit {
-        float: right;
-        padding: .35em 1em 0 0;
-    }
-    nav {
-        display: unset;
+        visibility: unset;
         width: unset;
         background-color: unset;
         position: unset;
-
+        height: 100%;
+        transform: unset;
+        opacity: unset;
     }
     .open, .exit {
         display: none;
     }
-    ul.menu {
-        display: flex;
+    .menu {
+        flex-direction: row;
+        padding: 0;
     }
-    ul.menu li {
+    .menu li {
         background-color: hsl(0 0% 90%);
         padding: 0.5em 1em;
         border-radius: 999px;
         margin-right: .5em;
     }
-    ul.menu li:last-of-type {
+    .menu li:last-of-type {
         margin-right: 0;
     }
-    
+    .menu a {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    .menu .active {
+        font-weight: bold;
+        background-color: var(--accent-light);
+    }
+    .active::after {
+        position: unset;
+    }
+    .submenu {
+        display: none;
+    }
 }
 /* Hero Section */
 .hero {
@@ -207,7 +243,7 @@ ul.menu .active {
 }
 /* MMO Section */
 .mmo {
-    background-color: hsl(80, 62%, 80%);
+    background-color: var(--accent-light);
     padding: var(--section-padding);
     display: flex;
     flex-direction: column;
