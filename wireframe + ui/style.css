@@ -24,21 +24,53 @@
       29.3px 29.2px 40.3px -3.5px hsl(var(--shadow-color) / 0.14);
 }
 :root {
-    --accent-light: hsl(80, 62%, 90%);
-    --accent-mid: hsl(80, 62%, 53%);
-    --accent-dark: hsl(80, 62%, 43%);
+    --color-gray-50: hsl(210deg, 25%, 96%);
+    --color-gray-100: hsl(210deg, 25%, 88%);
+    --color-gray-200: hsl(210deg, 20%, 77%);
+    --color-gray-300: hsl(210deg, 14%, 66%);
+    --color-gray-400: hsl(210deg, 12%, 55%);
+    --color-gray-500: hsl(210deg, 8%, 50%);
+    --color-gray-600: hsl(210deg, 9%, 45%);
+    --color-gray-700: hsl(210deg, 10%, 40%);
+    --color-gray-800: hsl(210deg, 15%, 25%);
+    --color-gray-900: hsl(210deg, 15%, 20%);
+    --color-gray-1000: hsl(210deg, 19%, 10%);
 
-    --light-gray: hsl(0 0% 95%);
+    --background: #ffffff;
+    --surface: #ffffff;
+    --error: #b00020;
+
+    --on-primary: ;
+    --on-secondary: ;
+    --on-background: ;
+    --on-surface: ;
+    --on-error: ;
+
+    --primary-50: #f3f9e9;
+    --primary-100: #e1efc8;
+    --primary-200: #cee4a5;
+    --primary-300: #bad981;
+    --primary-400: #aad164;
+    --primary-500: #9cc849;
+    --primary-600: #8cb841;
+    --primary-700: #77a437;
+    --primary-800: #63902e;
+    --primary-900: #406e1d;
+
+    --secondary-50: #f5f3e1;
+    --secondary-100: #e8e0b2;
+    --secondary-200: #d9cc81;
+    --secondary-300: #ccba4e;
+    --secondary-400: #c5ac25;
+    --secondary-500: #be9f00;
+    --secondary-600: #be9300;
+    --secondary-700: #be8400;
+    --secondary-800: #bd7500;
+    --secondary-900: #bc5a00;
 
     --section-padding-left-right: 7%;
     --section-padding-top-bottom: 3em;
     --section-padding: var(--section-padding-top-bottom) var(--section-padding-left-right);
-    
-    --dark-blue: #274465;
-    --bright-green: #88b22b;
-    --dull-green: #a9b385;
-    --light-green: #e8f2d6;
-    --brown: #8c2f0d;
 }
 
 *, *::before, *::after {
@@ -70,7 +102,7 @@ button {
 }
 a {
     text-decoration: none;
-    color: black;
+    color: var(--color-gray-900)
 }
 /* Header Section */
 header {
@@ -85,15 +117,14 @@ header {
     font-size: 1.4rem;
     font-weight: bold;
     display: inline-block;
-    color: var(--bright-green);
+    color: var(--primary-900);
     margin-right: 10px;
 }
 nav {
     visibility: hidden;
     width: 60%;
     height: 100vh;
-    background-color: hsl(0, 0%, 100%);
-    background-color: var(--dull-green);
+    background-color: var(--primary-200);
     filter: drop-shadow(0px 0px 4px hsl(0 0% 70%));
     position: fixed;
     top: 0;
@@ -125,25 +156,22 @@ ul li {
     list-style: none;
 }
 .menu {
-    padding: 2em 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding: 2em 0;
     margin: 0;
     clear: right;
 }
 .menu li {
     padding: 0.5em 1em;
     /* background-color: hsl(0, 0%, 75%); */
-    background-color: var(--light-green);
+    background-color: var(--primary-50);
     width: 100%;
-    margin: 2px 0;
+    margin: .5em 0;
 }
 .menu li:hover {
-    background-color: var(--dark-blue);
-}
-.menu li:hover a {
-    color: white;
+    background-color: var(--secondary-100);
 }
 .menu a {
     color: hsl(0, 0%, 13%);
@@ -163,18 +191,17 @@ ul li {
     left: 0px;
     width: 100%;
     height: 8px;
-    background-color: var(--dark-blue);
-}
-.submenu {
-    text-align: left;
+    background-color: var(--secondary-200);
 }
 .submenu li {
-    border-left: 2px solid white;
     background-color: unset;
+    margin-left: 1em;
+    border-left: 2px solid var(--primary-600);
+}
+.submenu li:hover {
+    background-color: var(--secondary-100);
 }
 .submenu li a{
-    font-size: 1rem;
-    color: black;
     font-size: 1.1rem;
 }
 .submenu p {
@@ -189,6 +216,7 @@ ul li {
         height: 100%;
         transform: unset;
         opacity: unset;
+        filter: unset;
     }
     .open, .exit {
         display: none;
@@ -198,10 +226,9 @@ ul li {
         padding: 0;
     }
     .menu li {
-        background-color: hsl(0 0% 90%);
-        padding: 0.5em 1em;
-        border-radius: 999px;
-        margin-right: .5em;
+        padding: 0.5em;
+        margin-right: 1em;
+        background-color: unset;
     }
     .menu li:last-of-type {
         margin-right: 0;
@@ -212,10 +239,15 @@ ul li {
     }
     .menu .active {
         font-weight: bold;
-        background-color: var(--accent-light);
+        
+    }
+    .menu li:hover {
+        background-color: var(--primary-50);
+        border-radius: 999px;
     }
     .active::after {
-        position: unset;
+        background-color: var(--primary-500);
+        height: 4px;
     }
     .submenu {
         display: none;
@@ -227,9 +259,11 @@ ul li {
 }
 .hero h1 {
     padding-bottom: .5em;
+    color: var(--color-gray-1000);
 }
 .hero p {
     padding-bottom: 1.5em;
+    color: var(--color-gray-600);
 }
 .hero button {
     padding: .5em 1em;
@@ -237,13 +271,13 @@ ul li {
     margin-left: 0;
     border-radius: 999px;
     border: none;
-    background-color: var(--accent-dark);
+    background-color: var(--primary-700);
     color: white;
     font-weight: bold;
 }
 /* MMO Section */
 .mmo {
-    background-color: var(--accent-light);
+    background-color: var(--primary-100);
     padding: var(--section-padding);
     display: flex;
     flex-direction: column;
