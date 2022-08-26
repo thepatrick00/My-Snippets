@@ -105,6 +105,7 @@ a {
     color: var(--color-gray-900)
 }
 /* Header Section */
+
 header {
     padding: 1em var(--section-padding-left-right);
     display: flex;
@@ -117,11 +118,12 @@ header {
     font-size: 1.4rem;
     font-weight: bold;
     display: inline-block;
-    color: var(--primary-900);
+    color: var(--primary-500);
     margin-right: 10px;
 }
 nav {
     visibility: hidden;
+    z-index: 1;
     width: 60%;
     height: 100vh;
     background-color: var(--primary-200);
@@ -180,6 +182,7 @@ ul li {
 }
 .menu .active {
     position: relative;
+    background-color: var(--secondary-50)
 }
 .menu .active a {
     font-weight: bold;
@@ -254,7 +257,21 @@ ul li {
     }
 }
 /* Hero Section */
+.bulb {
+    position: absolute;
+    z-index: -1;
+    top: 30px;
+    right: -60px;
+    width: 200px;
+    rotate: -8deg;
+    filter: grayscale(100%);
+}
+.hero:hover .bulb {
+    filter: grayscale(0%)
+}
 .hero {
+    position: relative;
+    overflow: hidden;
     padding: var(--section-padding);
 }
 .hero h1 {
@@ -297,4 +314,25 @@ ul li {
 }
 .mmo__button--emoji {
     font-size: 20px;
+}
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+    background-color: var(--background);
+    margin: .5em;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
 }
