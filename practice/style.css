@@ -1,6 +1,9 @@
 header {
     grid-area: header;
     background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 main {
     background-color: green;
@@ -15,13 +18,26 @@ footer {
     grid-area: b;
 }
 .card {
-    border: 6px solid black;
     display: grid;
-    grid-template-columns: 6px 300px 6px;
-    grid-template-rows: auto;
+    grid-template-rows: 50px 150px 50px;
+    grid-template-columns: 1fr 2fr;
     grid-template-areas: 
-        "b header"
+    "header header"
         "b main"
-        "b footer"
-    ;
-}
+        "footer footer"
+        ;
+        background-color: grey;
+        gap: 4px;
+        padding: 4px;
+    }
+    
+    img {
+        width: 100%;
+    }
+    h1 {
+        margin: 0;
+    }
+    .grid-pad {
+        padding: 12px;
+        background-color: #fff;
+    }

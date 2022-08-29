@@ -1,0 +1,110 @@
+:root {
+    --grid-divider-size: 3px;
+}
+
+.card {
+    font-family: 'Montserrat';
+    max-width: 700px;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 8px 8px 0px hsl(0 0% 85%);
+    /* this bgc is used to create inner borders */
+    background-color: hsl(0 0% 65%);
+    display: grid;
+    padding: var(--grid-divider-size);
+    gap: var(--grid-divider-size);
+    grid-template: 80px 1fr 100px / 1fr 2fr;
+    grid-template-areas: 
+    "header header"
+    "image ul"
+    "footer footer";
+}
+header {
+    grid-area: header;
+    padding: 1rem;
+}
+.img-ctr {
+    grid-area: image;
+    padding: 1rem;
+}
+h2 {
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 3rem;
+}
+.part {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+img {
+    width: 100%;
+    max-width: 250px;
+    display: block;
+    object-fit: cover;
+    margin: 0 auto;
+}
+ul.part {
+    grid-area: ul;
+    display: block;
+    margin: 0;
+    line-height: 1.9;
+    font-weight: 600;
+    padding-left: 40px;
+    /* overflow-y: auto; */
+}
+footer {
+    grid-area: footer;
+    background-color: white;
+    padding: 1rem;
+}
+span {
+    display: block;   
+    text-align: center;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    background-color: hsl(359deg 85% 53%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    width: fit-content;
+    box-shadow: 8px 8px 0px hsl(0 0% 85%);
+    align-self: center;
+}
+
+@media (max-width: 550px) {
+
+    /* less padding on mobile */
+    .card {
+        width: 95%;
+        box-shadow: none;
+        grid-template: 80px 1fr 100px / 4fr 3fr;
+        grid-template-areas: 
+        "header image"
+        "ul ul"
+        "footer footer";
+    }
+    span {
+        font-size: max(1.2rem, 100%);
+        font-size: 1.2rem;
+    }
+    h2 {
+        font-size: max(6vw, 1.3rem);
+    }
+    img {
+        margin: 0;
+    }
+}
+@media (max-width: 400px) {
+    .card {
+        grid-template: 80px 1fr 100px / 1fr 2fr;
+        grid-template-areas: 
+        "header image"
+        "ul ul"
+        "footer footer";
+    }
+}
