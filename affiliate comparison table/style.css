@@ -1,0 +1,28 @@
+body {
+    width: 100%;
+}
+figure {
+    max-width: 500px;
+    margin: auto;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito';
+}
+table {
+    font-family: 'Nunito';
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid hsl(0, 0%, 50%);
+    padding: .5em 2em;
+}
+tbody tr:nth-child(odd) {
+    background-color: hsl(0, 0%, 94%);
+}
+
+tr td:nth-child(1n + 2) {
+    text-align: center;
+}
+

@@ -1,1 +1,3 @@
 https://www.sfgate.com/market/article/best-wordpress-hosting-16756145.php
+
+strech goal is to use javascript to determine the main color of the image I use

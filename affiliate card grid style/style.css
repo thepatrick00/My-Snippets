@@ -1,5 +1,5 @@
 :root {
-    --grid-divider-size: 3px;
+    --grid-divider-size: 2px;
 }
 
 .card {
@@ -51,7 +51,7 @@ ul.part {
     grid-area: ul;
     display: block;
     margin: 0;
-    line-height: 1.9;
+    line-height: 2.1;
     font-weight: 600;
     padding-left: 40px;
     /* overflow-y: auto; */
