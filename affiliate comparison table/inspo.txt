@@ -1,2 +1,3 @@
 https://wpastra.com/comparison/elementor-free-pro/
 
+The challenge is making the table responsive.
