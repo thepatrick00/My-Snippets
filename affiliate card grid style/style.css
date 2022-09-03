@@ -1,12 +1,17 @@
 :root {
     --grid-divider-size: 2px;
 }
-
-.card {
-    font-family: 'Montserrat';
+figure {
     max-width: 700px;
     width: 80%;
     margin: 0 auto;
+}
+.link-card {
+    text-decoration: none;
+    color:hsl(0 0% 12%);
+}
+.card {
+    font-family: 'Montserrat';
     box-shadow: 8px 8px 0px hsl(0 0% 85%);
     /* this bgc is used to create inner borders */
     background-color: hsl(0 0% 65%);
